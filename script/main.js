@@ -19,18 +19,21 @@ const toTop= document.querySelector(".to-top");
 // const headerLink = document.querySelector(".header .header__item .header__link");
 
 
-window.addEventListener("scroll", function(){
+window.addEventListener('scroll', function(){
     var y=window.scrollY;
+    
     if(y> 100){
         header.style.background="#bd90cc"; 
-        toTop.classList.add("show");
+        toTop.classList.add("show")
         toTop.addEventListener("click",function(){
             return document.body.scrollTop = 0;
-        });
+        })
 
     }else{
         header.style.background="transparent";
-        toTop.classList.remove("show");
+        toTop.classList.remove("show")
+
+
     }
     
 });
@@ -48,6 +51,13 @@ const askIcon = document.querySelectorAll(".ask__header-top-icon");
 // }
 
 
+for (var i = 0 ; i < askItems.length ; i++){
+    // console.log(askIcon[i])
+    askItems[i].addEventListener("click", function(){
+        this.classList.toggle("is-active");
+        // askIcon[i].setAttribute("class", "ask__header-top-icon fas fa-minus");
+    })
+}
 
 
 
@@ -60,7 +70,10 @@ productImgs.forEach((item) => item.addEventListener(("click"), handleZoomImage))
 function handleZoomImage(event){
     const imgSrc = event.target.getAttribute("src");
     console.log(imgSrc);
-   
+    // preview.classList.add("show");
+    //      close.onclick =() =>{
+    //             preview.classList.remove("show");
+    //         }
     const template =`<div class="preview show">
     <div class="preview__box">
      
