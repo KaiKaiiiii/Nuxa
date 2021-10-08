@@ -1,0 +1,43 @@
+.intro {
+  @include bg($third-color);
+  height: 80rem;
+  position: relative;
+  max-width: 100%;
+  &__bg {
+    width: 50%;
+    transform: translateX(100%);
+    position: absolute;
+    z-index: 0;
+  }
+  &__wrapper {
+    padding: 10rem 0;
+    @include flexBox(center, space-between);
+    z-index: 1;
+  }
+  &__content {
+    max-width: 50%;
+  }
+  &__heading {
+    font-weight: 700;
+    font-size: 7rem;
+    line-height: 1.2;
+    font-family: $title-font;
+    margin-bottom: 4rem;
+    & span {
+      color: $secondary-color;
+    }
+  }
+
+  &__desc {
+    margin-bottom: 3rem;
+    font-weight: 400;
+    color: $text-color;
+    font-size: 2rem;
+    line-height: 1.6;
+  }
+
+  &__product {
+    z-index: 2;
+    @include moving;
+  }
+}

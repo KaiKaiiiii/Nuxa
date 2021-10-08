@@ -1,0 +1,48 @@
+.video {
+  background-color: $white;
+  padding: 10rem 0;
+
+  &__wrapper {
+    @include flexBox(center, center, column);
+    text-align: center;
+    max-width: 110rem;
+    padding: 4rem 0 6rem 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: 2rem;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      inset: 0;
+      @include gradient(to left);
+      transform: rotate(-5deg);
+      z-index: -1;
+      border-radius: inherit;
+    }
+  }
+
+  &__desc {
+    max-width: 94rem;
+    margin-top: 4rem;
+  }
+
+  &__icon {
+    padding: 2.4rem;
+    border-radius: 5rem;
+    display: block;
+    font-size: 2rem;
+    color: $white;
+    @include gradient(to right);
+    box-shadow: 0 0 0 12px rgba(138, 84, 212, 0.4),
+      0 0 0 6px rgba(194, 142, 204, 0.6);
+    margin-bottom: 2rem;
+  }
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+}

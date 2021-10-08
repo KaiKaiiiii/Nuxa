@@ -1,0 +1,76 @@
+#app {
+  background-color: #ccc;
+  height: auto;
+}
+
+.header {
+  height: $header-height;
+  width: 100%;
+  background-color: transparent;
+  @include flexBox(center);
+  @include linearTransition(0.25s);
+  position: fixed;
+  z-index: 10;
+  &__wrapper {
+    @include flexBox(center, space-between);
+  }
+  &__list {
+    @include flexBox(center, center);
+  }
+  &__link {
+    font-size: 1.5rem;
+    color: $white;
+    display: block;
+    font-weight: 600;
+    &:hover {
+      color: $primary-color;
+      @include linearTransition(0.25s);
+    }
+  }
+  &__item:not(:last-of-type) {
+    margin-right: 3rem;
+  }
+  &__bars {
+    display: none;
+  }
+  @include maxWidth(1023px) {
+    &__bars {
+      display: block;
+      font-size: 2rem;
+    }
+    &__list {
+      position: fixed;
+      top: 7.5rem;
+      left: 0;
+      right: 0;
+      background-color: white;
+      height: 50%;
+      width: 100%;
+      @include flexBox(center, center, column);
+      @include linearTransition(0.5s);
+      transform: translateY(calc(-100% - 7.5rem));
+      opacity: 0;
+    }
+    &__item:not(:last-of-type) {
+      margin-right: 0;
+    }
+    &__item {
+      width: 100%;
+      text-align: center;
+    }
+    &__link {
+      font-size: 2rem;
+      width: 100%;
+      padding: 16px 0;
+      &:hover {
+        @include bg($primary-color);
+        color: $white;
+      }
+    }
+  }
+}
+
+.isExpand {
+  transform: translateY(0);
+  opacity: 1;
+}

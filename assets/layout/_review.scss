@@ -1,0 +1,96 @@
+.review {
+  padding: 10rem 0;
+  background-color: $fourth-color;
+  position: relative;
+  &::after {
+    content: "feedback";
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem;
+    font-style: italic;
+    letter-spacing: 4rem;
+    z-index: 0;
+    color: rgba($primary-color, 0.1);
+    font-weight: 700;
+  }
+  &__wrapper {
+    @include flexBox(center, center, column);
+    text-align: center;
+    z-index: 1;
+  }
+
+  &__user {
+    z-index: 1;
+    margin-top: 2.4rem;
+    // transform: translateY(15%);
+    animation: FadeIn 8s linear infinite;
+
+    &-img {
+      width: 13%;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+    &-desc {
+      font-family: $content-font;
+      color: $text-color;
+      font-size: 1.6rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      max-width: 80rem;
+    }
+    &-author {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    &-icon {
+      font-size: 2rem;
+      color: #f9af13;
+    }
+  }
+  &__user-wrapper {
+    max-height: 34rem;
+    overflow: hidden;
+  }
+}
+
+@keyframes FadeIn {
+  0% {
+    transform: translateY(-0%);
+  }
+
+  10% {
+    transform: translateY(-10%);
+  }
+  20% {
+    transform: translateY(-20%);
+  }
+  30% {
+    transform: translateY(-30%);
+  }
+  40% {
+    transform: translateY(-40%);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+  60% {
+    transform: translateY(-60%);
+  }
+  70% {
+    transform: translateY(-70%);
+  }
+  80% {
+    transform: translateY(-80%);
+  }
+  90% {
+    transform: translateY(-90%);
+  }
+
+  100% {
+    transform: translateY(-110%);
+  }
+}

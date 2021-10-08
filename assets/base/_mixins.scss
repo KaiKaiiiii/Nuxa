@@ -1,0 +1,56 @@
+@mixin gradient($direction: "to bottom") {
+  background: linear-gradient($direction, $primary-color, $secondary-color);
+}
+
+@mixin flexBox(
+  $align: "flex-start",
+  $justify: "flex-strart",
+  $direction: "row"
+) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin bg($background) {
+  background-color: $background;
+}
+
+@mixin linearTransition($time) {
+  transition: all linear $time;
+}
+
+@mixin maxWidth($maxWidth) {
+  @media screen and (max-width: $maxWidth) {
+    @content;
+  }
+}
+
+@mixin minWidth($minWidth) {
+  @media screen and (max-width: $minWidth) {
+    @content;
+  }
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin moving {
+  animation: infinity 2s infinite;
+  @keyframes infinity {
+    0% {
+      transform: translateY(0px);
+    }
+
+    60% {
+      transform: translate(10px, 10px) rotate(3deg);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+}

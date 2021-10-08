@@ -1,0 +1,45 @@
+.highlight {
+  padding: 12rem 0;
+  @include gradient(to right);
+  position: relative;
+  &__bg {
+    position: absolute;
+    content: "";
+    background-image: url("../images/about_bg2.png");
+    background-position: center;
+    top: 0;
+    left: 0;
+    @include size(50%, 70%);
+    z-index: 0;
+  }
+
+  &__wrapper {
+    @include flexBox(center, space-between);
+  }
+  &__img {
+    width: 100%;
+    // @include moving();
+  }
+  &__wrapper,
+  &__product {
+    z-index: 2;
+  }
+  &__info {
+    max-width: 57rem;
+    padding: 6rem 5rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    &-desc {
+      margin-top: 4rem;
+      margin-bottom: 3rem;
+    }
+    &-item {
+      margin-top: 1rem;
+      font-size: 1.4rem;
+      & i {
+        color: $primary-color;
+        margin-right: 1rem;
+      }
+    }
+  }
+}

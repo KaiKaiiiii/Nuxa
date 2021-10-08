@@ -1,0 +1,76 @@
+.quality {
+  padding: 10rem 0;
+  background-color: $white;
+  position: relative;
+  overflow: hidden;
+  &__bg {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: -10%;
+    width: 50%;
+  }
+  &__wrapper {
+    @include flexBox(center, space-between);
+  }
+  &__media {
+    z-index: 2;
+  }
+  &__info-wrapper {
+    @include flexBox(center, center);
+    position: relative;
+    z-index: 1;
+  }
+
+  &__info-wrapper + &__info-wrapper {
+    margin-top: 4rem;
+  }
+
+  &__info-icon {
+    padding: 2rem;
+    font-size: 3rem;
+    display: block;
+    position: relative;
+    color: $white;
+    margin-right: 2rem;
+    &::after {
+      content: "";
+      position: absolute;
+      @include size(8rem, 5.5rem);
+      @include gradient(to right);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      border-radius: 2rem;
+      z-index: -1;
+    }
+  }
+  &__info-inner {
+    max-width: 70rem;
+    min-height: 8rem;
+    @include flexBox(flex-start, flex-start, column);
+  }
+  &__info-heading {
+    font-size: 2.4rem;
+    font-family: $title-font;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+  }
+  &__info-desc {
+    font-size: 1.6rem;
+    color: $text-color;
+    flex: 1;
+    font-weight: 600;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    word-break: break-word;
+    overflow: hidden;
+  }
+
+  .main__heading {
+    margin-bottom: 8.5rem;
+  }
+}

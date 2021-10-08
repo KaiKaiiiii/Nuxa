@@ -1,0 +1,46 @@
+.features {
+  @include bg($white);
+  padding: 12rem 0;
+  position: relative;
+  &__bg {
+    width: 8%;
+    position: absolute;
+    &-r {
+      right: 0;
+      top: 0;
+    }
+    &-l {
+      left: 0;
+      bottom: 0;
+    }
+  }
+  &__wrapper {
+    margin-left: 23rem;
+    margin-top: 9rem;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 30px;
+    &:first-child {
+      margin-bottom: 4rem;
+    }
+  }
+  &__icon {
+    color: $secondary-color;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+  }
+  &__heading {
+    margin-bottom: 2.4rem;
+    font-size: 2.4rem;
+    font-family: $title-font;
+    font-weight: bold;
+  }
+  &__desc {
+    color: $text-color;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+}

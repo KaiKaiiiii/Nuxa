@@ -1,0 +1,96 @@
+.contact {
+  padding: 10rem 0;
+  @include bg($white);
+
+  text-align: center;
+  &__wrapper {
+    @include flexBox(flex-start, space-between);
+    margin-top: 4rem;
+  }
+
+  &__item {
+    @include flexBox(center, flex-start);
+    position: relative;
+    z-index: 1;
+  }
+
+  &__icon {
+    font-size: 2rem;
+    padding: 4rem;
+    color: $white;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      @include size(6rem);
+      @include gradient(to right);
+      border-radius: 0.8rem;
+      transform: translate(-50%, -50%) rotate(45deg);
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+    }
+  }
+  &__content {
+    text-align: left;
+    height: 6rem;
+    @include flexBox(flex-start, center, column);
+    &-heading {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+    }
+    &-desc {
+      flex: 1;
+      font-size: 1.6rem;
+      color: $text-color;
+      line-height: 1.6;
+    }
+  }
+  &__send {
+    display: grid;
+    width: 70%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+
+    & input:nth-child(1) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+    & input:nth-child(2) {
+      grid-column-start: 3;
+      grid-column-end: 5;
+    }
+    & input:nth-child(3) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+    & input:nth-child(4) {
+      grid-column-start: 3;
+      grid-column-end: 5;
+    }
+
+    & textarea {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 3;
+      grid-row-end: 5;
+    }
+    .order__btn {
+      grid-column-start: 2;
+      grid-column-end: 4;
+      width: unset;
+      border-radius: 15px;
+    }
+
+    & textarea,
+    & input {
+      padding: 1rem 2rem;
+      @include bg($fourth-color);
+      outline: none;
+      border: none;
+      border-radius: 1rem;
+      font-family: $content-font;
+    }
+  }
+}

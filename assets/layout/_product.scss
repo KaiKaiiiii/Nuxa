@@ -1,0 +1,118 @@
+.product {
+  padding: 10rem 0;
+  background-color: $white;
+
+  .main__heading {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  &__wrapper {
+    @include flexBox(center, center, column);
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0 6rem;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    min-height: 50rem;
+    min-width: 30rem;
+    padding: 3rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: 2rem;
+  }
+  &__img {
+    cursor: pointer;
+    width: 100%;
+  }
+  &__name {
+    font-size: 2.4rem;
+    font-family: $title-font;
+    margin: 2rem 0;
+    font-weight: 600;
+  }
+  &__icon {
+    font-size: 1.2rem;
+    color: #e7b845;
+    margin-bottom: 2rem;
+  }
+  &__bottom {
+    @include flexBox(center, space-between);
+  }
+  &__price {
+    font-size: 2.6rem;
+    font-weight: 700;
+  }
+  .order__btn {
+    width: 12.6rem;
+    height: 5rem;
+    @include flexBox(center, center);
+  }
+}
+
+.preview {
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+  }
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  inset: 0;
+  z-index: 12;
+  pointer-events: none;
+  opacity: 0;
+  @include linearTransition(0.25s);
+  &__detail {
+    @include flexBox(center, space-between);
+  }
+  &__close {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  &__box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include size(50rem);
+    @include bg($white);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    border-radius: 2rem;
+    padding: 2rem;
+  }
+  &__title {
+    @include flexBox;
+    font-size: 2rem;
+  }
+  &__img {
+    width: 70%;
+  }
+  &__current-img,
+  &__total-img {
+    margin: 0 1rem;
+  }
+  &__img-box {
+    @include flexBox(center, center);
+    position: relative;
+    flex: 1;
+    height: 100%;
+  }
+  &__slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    cursor: pointer;
+
+    &-prev {
+      left: 0;
+    }
+    &-next {
+      right: 0;
+    }
+  }
+}
